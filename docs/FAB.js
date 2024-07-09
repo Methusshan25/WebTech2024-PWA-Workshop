@@ -31,6 +31,10 @@ function showInstallButton(event) {
     });
 }
 
+addEventListener('beforeinstallprompt', (event) => {
+    showInstallButton(event);
+})
+
 // Start implementing here:
 // TODO: Implement a `beforeinstallprompt` event listener which prevents the default browser behaviour
 //       and shows our custom install button instead by calling the `showInstallButton` function with the captured event
