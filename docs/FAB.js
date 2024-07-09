@@ -31,7 +31,8 @@ function showInstallButton(event) {
     });
 }
 
-addEventListener('beforeinstallprompt', (event) => {
+window.addEventListener('beforeinstallprompt', (event) => {
+    event.preventDefault();
     showInstallButton(event);
 })
 
