@@ -66,7 +66,7 @@ function tryToLoadFromNetworkAndUpdateCacheIfSuccessful (request, timeout = 1000
             //       Hinweis: Nutzt einen Klon der Antwort (response.clone()), die Antwort ggf. Streams enthält die nur einmal genutzt werden können.
 
             if(staticFilesToCache.includes(request.url)){
-                updateStaticCache(request. response.clone())
+                updateStaticCache(request, response.clone())
             }
             // Antwort der Response als Wert des Promises zurückgeben
             resolve(response)
