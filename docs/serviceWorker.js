@@ -32,7 +32,6 @@ self.addEventListener('activate', event => {
         // TODO: Iteriert über alle Cache Keys und löscht alle, die nicht eurem oben definierten Cache Namen entsprechen.
         //       Vorsicht: Das Läschen von Caches ist asynchron, nutzt deshalb Promise.all() um sicherzustellen, dass alle Löschprozesse abgeschlossen sind.
         //       Nur dann wird der ServiceWorker aktiviert.
-        event.waitUntil(
             caches.keys().then(cacheNames => {
                 return Promise.all(
                     cacheNames.map(cacheName => {
@@ -42,7 +41,6 @@ self.addEventListener('activate', event => {
                     })
                 )
             })
-        )
     )
 })
 
