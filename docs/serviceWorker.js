@@ -95,7 +95,7 @@ self.addEventListener('fetch', event => {
     //       Hinweis: Falls der Cache nicht gefunden wird, sollte eine 404 Antwort zurückgegeben werden (e.g. `new Response(null, {status: 404, statusText: 'Not found'})`).
     //                Wenn dies nicht passiert, wirft der Browser einen Fehler und eure App lädt möglicherweise nicht korrekt.
     event.respondWith(
-        tryToLoadFromNetwork(event.request, 10000)
+        tryToLoadFromNetworkAndUpdateCacheIfSuccessful(event.request, 10000)
             .catch(() => {
                 console.log('Fehler beim Laden aus dem Netwerk, versuche aus dem Cache zu laden...')
 
